@@ -13,12 +13,12 @@ export const IndexPage: FC = () => {
   return (
     <Page back={false}>
       <SectionHeader>Популярные категории</SectionHeader>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', padding: '16px'}}>
-          <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
-          <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
-          <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
-          <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
-        </div>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', padding: '16px'}}>
+        <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
+        <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
+        <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
+        <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
+      </div>
       <List>
         <Section
           header="Shparka"
