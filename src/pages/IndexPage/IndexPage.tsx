@@ -9,6 +9,16 @@ import tonSvg from './ton.svg';
 export const IndexPage: FC = () => {
   return (
     <Page back={false}>
+      <Section
+          header="Популярные категории"
+      >
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px'}}>
+          <Cell style={{ height: '100px', }}>Block 1</Cell>
+          <Cell style={{ height: '100px' }}>Block 2</Cell>
+          <Cell style={{ height: '100px' }}>Block 3</Cell>
+          <Cell style={{ height: '100px' }}>Block 4</Cell>
+        </div>
+      </Section>
       <List>
         <Section
           header="Shparka"
