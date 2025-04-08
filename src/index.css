@@ -3,22 +3,3 @@ body {
   padding: 0;
   margin: 0;
 }
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px; /* Adjust spacing between items */
-}
-
-.grid-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%; /* Ensures the item fits the grid cell */
-  aspect-ratio: 1; /* Makes the item a square */
-  text-align: center;
-  background-color: #f9f9f9; /* Optional: Add a background color */
-  border-radius: 8px; /* Optional: Add rounded corners */
-  overflow: hidden; /* Ensures content doesn't overflow */
-}

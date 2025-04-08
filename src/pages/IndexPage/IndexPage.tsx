@@ -10,40 +10,43 @@ export const IndexPage: FC = () => {
   return (
     <Page back={false}>
       <List>
-        <Section
-          header="Популярные категории"
-        >
-          <div className="grid-container">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
           <Link to="/prepared-food">
-            <Cell
-                className="grid-item"
-                before={<Image src="https://www.pngplay.com/wp-content/uploads/9/Meal-Transparent-Images.png" />}
-                subtitle="Только разогреть!"
-            >Готовая еда</Cell>
+            <Section>
+              <Cell
+                  style={{ height: "100px"}}
+                  before={<Image src="https://www.pngplay.com/wp-content/uploads/9/Meal-Transparent-Images.png" />}
+                  subtitle="Только разогреть!"
+              >Готовая еда</Cell>
+            </Section>
           </Link>
           <Link to="/drinks">
+            <Section>
             <Cell
-                className="grid-item"
+                style={{ height: "100px"}}
                 before={<Image src="https://static.vecteezy.com/system/resources/previews/054/314/897/non_2x/bottles-and-can-coca-cola-free-png.png" />}
                 subtitle="Вода, соки, газировка и алкоголь"
             >Вода и напитки</Cell>
+            </Section>
           </Link>
           <Link to="/snacks">
+            <Section>
             <Cell
-                className="grid-item"
+                style={{ height: "100px"}}
                 before={<Image src="https://static.vecteezy.com/system/resources/thumbnails/027/144/586/small/delicious-homemade-kurkure-snack-on-background-free-png.png" />}
                 subtitle="Чипсы, орехи, сухарики и прочее"
             >Снеки</Cell>
+            </Section>
           </Link>
           <Link to="/discounts">
-            <Cell
-                className="grid-item"
+            <Section><Cell
+                style={{ height: "100px"}}
                 before={<Image src="https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-price-tag-with-the-discount-icon-vector-png-image_6686659.png"/>}
                 subtitle="Скидки и акции на товары"
-            >Акции и скидки</Cell>
+            >Акции и скидки</Cell></Section>
+
           </Link>
-          </div>
-        </Section>
+        </div>
         <Section
           header="Shparka"
           footer="You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects"
