@@ -10,8 +10,8 @@ export const IndexPage: FC = () => {
   return (
     <Page back={false}>
       <List>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-          <Link to="/prepared-food">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", maxWidth: "100%" }}>
+          <Link to="/prepared-food" style={{ width: "calc(50vw - 8px)" }}>
             <Section>
               <Cell
                   style={{ height: "100px"}}
@@ -20,7 +20,7 @@ export const IndexPage: FC = () => {
               >Готовая еда</Cell>
             </Section>
           </Link>
-          <Link to="/drinks">
+          <Link to="/drinks" style={{ width: "calc(50vw - 8px)" }}>
             <Section>
             <Cell
                 style={{ height: "100px"}}
@@ -29,7 +29,7 @@ export const IndexPage: FC = () => {
             >Вода и напитки</Cell>
             </Section>
           </Link>
-          <Link to="/snacks">
+          <Link to="/snacks" style={{ width: "calc(50vw - 8px)" }}>
             <Section>
             <Cell
                 style={{ height: "100px"}}
@@ -38,7 +38,7 @@ export const IndexPage: FC = () => {
             >Снеки</Cell>
             </Section>
           </Link>
-          <Link to="/discounts">
+          <Link to="/discounts" style={{ width: "calc(50vw - 8px)" }}>
             <Section><Cell
                 style={{ height: "100px"}}
                 before={<Image src="https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-price-tag-with-the-discount-icon-vector-png-image_6686659.png"/>}
