@@ -20,13 +20,22 @@ export const IndexPage: FC = () => {
             >Готовая еда</Cell>
           </Link>
           <Link to="/drinks">
-            <Cell>Вода и напитки</Cell>
+            <Cell
+                before={<Image src="https://static.vecteezy.com/system/resources/previews/054/314/897/non_2x/bottles-and-can-coca-cola-free-png.png" />}
+                subtitle="Вода, соки, газировка и алкоголь"
+            >Вода и напитки</Cell>
           </Link>
           <Link to="/snacks">
-            <Cell>Снеки</Cell>
+            <Cell
+                before={<Image src="https://static.vecteezy.com/system/resources/thumbnails/027/144/586/small/delicious-homemade-kurkure-snack-on-background-free-png.png" />}
+                subtitle="Чипсы, орехи, сухарики и прочее"
+            >Снеки</Cell>
           </Link>
           <Link to="/discounts">
-            <Cell>Акции и скидки</Cell>
+            <Cell
+            before={<Image src="https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-price-tag-with-the-discount-icon-vector-png-image_6686659.png"/>}
+            subtitle="Скидки и акции на товары"
+            >Акции и скидки</Cell>
           </Link>
         </Section>
         <Section
