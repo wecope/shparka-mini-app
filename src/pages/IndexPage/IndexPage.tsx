@@ -13,6 +13,11 @@ export const IndexPage: FC = () => {
         <Section
           header="Популярные категории"
         >
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "16px"
+          }}>
           <Link to="/prepared-food">
             <Cell
                 before={<Image src="https://www.pngplay.com/wp-content/uploads/9/Meal-Transparent-Images.png" />}
@@ -37,6 +42,7 @@ export const IndexPage: FC = () => {
             subtitle="Скидки и акции на товары"
             >Акции и скидки</Cell>
           </Link>
+          </div>
         </Section>
         <Section
           header="Shparka"
