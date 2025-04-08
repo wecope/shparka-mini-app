@@ -26,26 +26,26 @@ export const IndexPage: FC = () => {
           </Link>
           <Link to="/drinks">
             <Section>
-            <Cell
-                style={{ height: "200px" }}
-                before={<Image src="https://static.vecteezy.com/system/resources/previews/054/314/897/non_2x/bottles-and-can-coca-cola-free-png.png" />}
-                // subtitle="Вода, соки, газировка и алкоголь"
-            >Вода</Cell>
+                <Cell
+                    style={{ height: "200px", alignItems: "end", background: "url('https://static.vecteezy.com/system/resources/previews/054/314/897/non_2x/bottles-and-can-coca-cola-free-png.png') no-repeat center", backgroundSize: "60%"}}
+                    // before={<Image src="https://static.vecteezy.com/system/resources/previews/054/314/897/non_2x/bottles-and-can-coca-cola-free-png.png" />}
+                    // subtitle="Вода, соки, газировка и алкоголь"
+                >Вода и напитки</Cell>
             </Section>
           </Link>
           <Link to="/snacks">
             <Section>
             <Cell
-                style={{ height: "200px"}}
-                before={<Image src="https://static.vecteezy.com/system/resources/thumbnails/027/144/586/small/delicious-homemade-kurkure-snack-on-background-free-png.png" />}
+                style={{ height: "200px", alignItems: "end", background: "url('https://static.vecteezy.com/system/resources/thumbnails/027/144/586/small/delicious-homemade-kurkure-snack-on-background-free-png.png') no-repeat center", backgroundSize: "60%"}}
+                // before={<Image src="https://static.vecteezy.com/system/resources/thumbnails/027/144/586/small/delicious-homemade-kurkure-snack-on-background-free-png.png" />}
                 // subtitle="Чипсы, орехи, сухарики и прочее"
             >Снеки</Cell>
             </Section>
           </Link>
           <Link to="/discounts">
             <Section><Cell
-                style={{ height: "200px"}}
-                before={<Image src="https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-price-tag-with-the-discount-icon-vector-png-image_6686659.png"/>}
+                style={{ height: "200px", alignItems: "end", background: "url('https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-price-tag-with-the-discount-icon-vector-png-image_6686659.png') no-repeat center", backgroundSize: "60%"}}
+                // before={<Image src="https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-price-tag-with-the-discount-icon-vector-png-image_6686659.png"/>}
                 // subtitle="Скидки и акции на товары"
             >Акции</Cell></Section>
 
