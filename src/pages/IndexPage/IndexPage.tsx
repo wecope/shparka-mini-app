@@ -10,7 +10,11 @@ export const IndexPage: FC = () => {
   return (
     <Page back={false}>
       <List>
-          <div>
+          <div style={{
+            display: "grid",
+            gap: "16px",
+            gridTemplateColumns: "repeat(2, 1fr)"
+          }}>
           <Link to="/prepared-food">
             <Section>
               <Cell
