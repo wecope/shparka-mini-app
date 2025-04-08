@@ -5,20 +5,20 @@ import { Link } from '@/components/Link/Link.tsx';
 import { Page } from '@/components/Page.tsx';
 
 import tonSvg from './ton.svg';
+import {
+  SectionHeader
+} from "@telegram-apps/telegram-ui/dist/components/Blocks/Section/components/SectionHeader/SectionHeader";
 
 export const IndexPage: FC = () => {
   return (
     <Page back={false}>
-      <Section
-          header="Популярные категории"
-      >
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px'}}>
-          <Cell style={{ height: '100px', }}>Block 1</Cell>
-          <Cell style={{ height: '100px' }}>Block 2</Cell>
-          <Cell style={{ height: '100px' }}>Block 3</Cell>
-          <Cell style={{ height: '100px' }}>Block 4</Cell>
+      <SectionHeader>Популярные категории</SectionHeader>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', padding: '16px'}}>
+          <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
+          <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
+          <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
+          <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
         </div>
-      </Section>
       <List>
         <Section
           header="Shparka"
