@@ -5,21 +5,30 @@ import { Link } from '@/components/Link/Link.tsx';
 import { Page } from '@/components/Page.tsx';
 
 import tonSvg from './ton.svg';
-import {
-  SectionHeader
-} from "@telegram-apps/telegram-ui/dist/components/Blocks/Section/components/SectionHeader/SectionHeader";
 
 export const IndexPage: FC = () => {
   return (
     <Page back={false}>
-      <SectionHeader>Популярные категории</SectionHeader>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', padding: '16px'}}>
-        <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
-        <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
-        <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
-        <Section><Cell style={{ height: '100px', }}>Block 1</Cell></Section>
-      </div>
       <List>
+        <Section
+          header="Популярные категории"
+        >
+          <Link to="/prepared-food">
+            <Cell
+                before={<Image src="https://www.pngplay.com/wp-content/uploads/9/Meal-Transparent-Images.png" />}
+                subtitle="Только разогреть!"
+            >Готовая еда</Cell>
+          </Link>
+          <Link to="/drinks">
+            <Cell>Вода и напитки</Cell>
+          </Link>
+          <Link to="/snacks">
+            <Cell>Снеки</Cell>
+          </Link>
+          <Link to="/discounts">
+            <Cell>Акции и скидки</Cell>
+          </Link>
+        </Section>
         <Section
           header="Shparka"
           footer="You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects"
