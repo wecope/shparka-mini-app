@@ -21,7 +21,7 @@ export const IndexPage: FC = () => {
                   style={{ height: "100px"}}
                   before={<Image src="https://www.pngplay.com/wp-content/uploads/9/Meal-Transparent-Images.png" />}
                   // subtitle="Только разогреть!"
-              >Готовая еда</Cell>
+              >еда</Cell>
             </Section>
           </Link>
           <Link to="/drinks">
@@ -30,7 +30,7 @@ export const IndexPage: FC = () => {
                 style={{ height: "100px"}}
                 before={<Image src="https://static.vecteezy.com/system/resources/previews/054/314/897/non_2x/bottles-and-can-coca-cola-free-png.png" />}
                 // subtitle="Вода, соки, газировка и алкоголь"
-            >Вода и напитки</Cell>
+            >Вода</Cell>
             </Section>
           </Link>
           <Link to="/snacks">
@@ -47,7 +47,7 @@ export const IndexPage: FC = () => {
                 style={{ height: "100px"}}
                 before={<Image src="https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-price-tag-with-the-discount-icon-vector-png-image_6686659.png"/>}
                 // subtitle="Скидки и акции на товары"
-            >Акции и скидки</Cell></Section>
+            >Акции</Cell></Section>
 
           </Link>
           </div>
