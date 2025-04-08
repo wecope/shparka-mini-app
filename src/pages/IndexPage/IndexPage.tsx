@@ -10,8 +10,7 @@ export const IndexPage: FC = () => {
   return (
     <Page back={false}>
       <List>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", maxWidth: "100%" }}>
-          <Link to="/prepared-food" style={{ width: "calc(50vw - 8px)" }}>
+          <Link to="/prepared-food">
             <Section>
               <Cell
                   style={{ height: "100px"}}
@@ -20,7 +19,7 @@ export const IndexPage: FC = () => {
               >Готовая еда</Cell>
             </Section>
           </Link>
-          <Link to="/drinks" style={{ width: "calc(50vw - 8px)" }}>
+          <Link to="/drinks">
             <Section>
             <Cell
                 style={{ height: "100px"}}
@@ -29,7 +28,7 @@ export const IndexPage: FC = () => {
             >Вода и напитки</Cell>
             </Section>
           </Link>
-          <Link to="/snacks" style={{ width: "calc(50vw - 8px)" }}>
+          <Link to="/snacks">
             <Section>
             <Cell
                 style={{ height: "100px"}}
@@ -38,7 +37,7 @@ export const IndexPage: FC = () => {
             >Снеки</Cell>
             </Section>
           </Link>
-          <Link to="/discounts" style={{ width: "calc(50vw - 8px)" }}>
+          <Link to="/discounts">
             <Section><Cell
                 style={{ height: "100px"}}
                 before={<Image src="https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-price-tag-with-the-discount-icon-vector-png-image_6686659.png"/>}
@@ -46,7 +45,6 @@ export const IndexPage: FC = () => {
             >Акции и скидки</Cell></Section>
 
           </Link>
-        </div>
         <Section
           header="Shparka"
           footer="You can use these pages to learn more about features, provided by Telegram Mini Apps and other useful projects"
