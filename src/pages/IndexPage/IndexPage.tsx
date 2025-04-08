@@ -18,16 +18,16 @@ export const IndexPage: FC = () => {
           <Link to="/prepared-food">
             <Section>
               <Cell
-                  style={{ height: "100px"}}
-                  before={<Image src="https://www.pngplay.com/wp-content/uploads/9/Meal-Transparent-Images.png" />}
+                  style={{ height: "200px", alignItems: "end", background: "url('https://www.pngplay.com/wp-content/uploads/9/Meal-Transparent-Images.png') no-repeat center", backgroundSize: "60%"}}
+                  // before={<Image src="https://www.pngplay.com/wp-content/uploads/9/Meal-Transparent-Images.png" />}
                   // subtitle="Только разогреть!"
-              >еда</Cell>
+              >Готовая еда</Cell>
             </Section>
           </Link>
           <Link to="/drinks">
             <Section>
             <Cell
-                style={{ height: "100px"}}
+                style={{ height: "200px" }}
                 before={<Image src="https://static.vecteezy.com/system/resources/previews/054/314/897/non_2x/bottles-and-can-coca-cola-free-png.png" />}
                 // subtitle="Вода, соки, газировка и алкоголь"
             >Вода</Cell>
@@ -36,7 +36,7 @@ export const IndexPage: FC = () => {
           <Link to="/snacks">
             <Section>
             <Cell
-                style={{ height: "100px"}}
+                style={{ height: "200px"}}
                 before={<Image src="https://static.vecteezy.com/system/resources/thumbnails/027/144/586/small/delicious-homemade-kurkure-snack-on-background-free-png.png" />}
                 // subtitle="Чипсы, орехи, сухарики и прочее"
             >Снеки</Cell>
@@ -44,7 +44,7 @@ export const IndexPage: FC = () => {
           </Link>
           <Link to="/discounts">
             <Section><Cell
-                style={{ height: "100px"}}
+                style={{ height: "200px"}}
                 before={<Image src="https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-price-tag-with-the-discount-icon-vector-png-image_6686659.png"/>}
                 // subtitle="Скидки и акции на товары"
             >Акции</Cell></Section>
