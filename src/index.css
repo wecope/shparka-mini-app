@@ -76,7 +76,7 @@ body {
 
 .square.ready {
   background-image: url("/assets/готоваяеда.png");
-    background-size: 75%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
 }
