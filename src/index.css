@@ -5,10 +5,10 @@ body {
 }
 
 .container {
-  padding: 4.5%;
+  padding: 3%;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Две колонки */
-  gap: 4.5%; /* Пространство между квадратами */
+  gap: 3%; /* Пространство между квадратами */
   width: 100%; /* Полная ширина контейнера */
   max-width: 100vw; /* Предотвращение переполнения на маленьких экранах */
   box-sizing: border-box; /* Учитывать padding и border в ширине/высоте */
@@ -20,18 +20,22 @@ body {
   border-radius: 1rem; /* Скруглённые углы */
 }
 
+.square.gradient {
+  background: linear-gradient(to bottom, #FF8000, #FF4D00);
+}
+
 .search-bar {
-  padding: 0 4.5%;
+  padding: 0 3%;
   display: flex;
   justify-content: center;
-  height: 4.5%;
+  height: 3%;
 }
 
 .search-bar input {
   background-color: #F2F2F2; /* Цвет фона поля ввода */
   box-shadow: none;
   width: 100%; /* Адаптивная ширина */
-  padding: 5%;
+  padding: 4.5%;
   font-size: 16px;
   font-weight: 500;
   border: none;
@@ -42,4 +46,29 @@ body {
 .search-bar input::placeholder {
   font-family: 'Inter', sans-serif; /* Шрифт Inter */
   color: #9B9B9B; /* Цвет текста плейсхолдера */
+}
+
+.new-heading {
+    font-family: 'Inter', sans-serif; /* Шрифт Inter */
+    font-size: 22px; /* Размер шрифта */
+    font-weight: 700; /* Жирный шрифт */
+    color: #000000; /* Цвет текста */
+  /* Убираем отступы */
+  margin: 3% 3% 1%;
+}
+
+.meal-container {
+  padding: 1% 3%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Три колонки */
+  gap: 3%; /* Пространство между квадратами */
+  width: 100%; /* Полная ширина контейнера */
+  max-width: 100vw; /* Предотвращение переполнения на маленьких экранах */
+  box-sizing: border-box; /* Учитывать padding и border в ширине/высоте */
+}
+
+.meal-square {
+  aspect-ratio: 1 / 1; /* Сохранять соотношение сторон 1:1 */
+  background-color: #F2F2F2; /* Цвет квадрата */
+  border-radius: 1rem; /* Скруглённые углы */
 }
