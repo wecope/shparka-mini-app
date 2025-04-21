@@ -11,7 +11,7 @@ export const IndexPage: FC = () => {
           <div className="square"></div>
           <div className="square"></div>
           <div className="square"></div>
-          <div className="square"></div>
+          <div className="square gradient"></div>
         </div>
         <div className="new-heading">Новинки</div>
         <div className="meal-container">
