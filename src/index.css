@@ -15,6 +15,7 @@ body {
 }
 
 .square {
+  position: relative;
   aspect-ratio: 1 / 1; /* Сохранять соотношение сторон 1:1 */
   background-color: #F2F2F2; /* Цвет квадрата */
   border-radius: 1rem; /* Скруглённые углы */
@@ -71,4 +72,45 @@ body {
   aspect-ratio: 1 / 1; /* Сохранять соотношение сторон 1:1 */
   background-color: #F2F2F2; /* Цвет квадрата */
   border-radius: 1rem; /* Скруглённые углы */
+}
+
+.square.ready {
+  background-image: url("/assets/готоваяеда.png");
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.square.water {
+  background-image: url("/assets/вода.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.square.snacks {
+  background-image: url("/assets/снеки.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.square.gradient {
+  background-image: url("/assets/discount.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.square-text {
+  position: absolute; /* Position relative to .square */
+  bottom: 6%; /* Adjust distance from the bottom */
+  left: 6%; /* Adjust distance from the left */
+  color: #363636;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.text-white {
+    color: white;
 }
