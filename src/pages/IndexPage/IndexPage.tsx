@@ -1,29 +1,43 @@
 import type { FC } from 'react';
 import { Page } from '@/components/Page.tsx';
 import { Link } from '@/components/Link/Link.tsx';
+import {useNavigate} from "react-router-dom";
+
+
 
 export const IndexPage: FC = () => {
+    const navigate = useNavigate();
   return (
     <Page back={false}>
         <div className="search-bar">
             <div className="search-icon"></div>
-            <input type="search" placeholder="Искать в Shparka" />
+            <input type="search" placeholder="Искать в Shparka" onKeyDown={e => {
+                if (e.key === 'Enter') {
+                    navigate('/search');
+            }}}
+                />
         </div>
         <div className="container">
-            <Link to="ready-food">
+            <Link to="/ready-food">
                   <div className="square ready">
                           <div className="square-text">Готовая еда</div>
                   </div>
             </Link>
+            <Link to="/water">
           <div className="square water">
             <div className="square-text">Вода и напитки</div>
           </div>
+                </Link>
+            <Link to="/snacks">
           <div className="square snacks">
             <div className="square-text">Снеки</div>
           </div>
+                </Link>
+            <Link to="/discount">
           <div className="square gradient">
             <div className="square-text text-white">Готовая еда</div>
           </div>
+                </Link>
         </div>
         <div className="new-heading">Новинки</div>
         <div className="meal-container">

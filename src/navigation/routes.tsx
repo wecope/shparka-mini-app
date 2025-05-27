@@ -6,6 +6,10 @@ import { LaunchParamsPage } from '@/pages/LaunchParamsPage.tsx';
 import { ThemeParamsPage } from '@/pages/ThemeParamsPage.tsx';
 import { TONConnectPage } from '@/pages/TONConnectPage/TONConnectPage';
 import {ReadyFoodPage} from "@/pages/ReadyFoodPage/ReadyFoodPage.tsx";
+import {WaterPage} from "@/pages/WaterPage/WaterPage.tsx";
+import {SnacksPage} from "@/pages/SnacksPage/SnacksPage.tsx";
+import {DiscountPage} from "@/pages/DiscountPage/DiscountPage.tsx";
+import {SearchPage} from "@/pages/SearchPage/SearchPage.tsx";
 
 interface Route {
   path: string;
@@ -46,5 +50,25 @@ export const routes: Route[] = [
     path: '/ready-food',
     Component: ReadyFoodPage,
     title: 'Готовая еда',
+  },
+  {
+    path: '/water',
+    Component: WaterPage,
+    title: 'Вода и напитки',
+  },
+  {
+    path: '/snacks',
+    Component: SnacksPage,
+    title: 'Снеки',
+  },
+  {
+    path: '/discount',
+    Component: DiscountPage,
+    title: 'Скидки',
+  },
+  {
+    path: '/search',
+    Component: SearchPage,
+    title: 'Поиск',
   }
 ];
