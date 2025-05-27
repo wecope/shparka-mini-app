@@ -114,3 +114,106 @@ body {
 .text-white {
     color: white;
 }
+
+.meal-card {
+  color: #363636;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.meal-square-1 {
+  background-image: url("https://i.ibb.co/sJNPrLvL/5ee7227ad2a94-800x800-fit-png.webp");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.meal-square-2 {
+  background-image: url("https://i.ibb.co/n8m3L3GT/300x300.webp");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.meal-square-3 {
+  background-image: url("https://i.ibb.co/HTZDVvDq/delicious-omelette-with-herbs-red-peppers-plate.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.meal-weight-1 {
+  color: #B7B7B7;
+}
+
+.meal-weight-2 {
+  color: #B7B7B7;
+}
+
+.meal-weight-3 {
+  color: #B7B7B7;
+}
+
+.meal-price-1 {
+  background-color: #F2F2F2;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  color: #FF8000;
+  margin-top: 4px;
+  font-size: 14px;
+  gap: 4px;
+}
+
+.meal-price-plus-1 {
+font-size: 20px;
+  font-weight: 300;
+  line-height: 17px;
+}
+
+.meal-price-2 {
+  background-color: #F2F2F2;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  color: #FF8000;
+  margin-top: 4px;
+  font-size: 14px;
+  gap: 4px;
+}
+
+.meal-price-plus-2 {
+font-size: 20px;
+  font-weight: 300;
+  line-height: 17px;
+}
+
+.meal-price-3 {
+  background-color: #F2F2F2;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  color: #FF8000;
+  margin-top: 4px;
+  font-size: 14px;
+  gap: 4px;
+}
+
+.meal-price-plus-3 {
+font-size: 20px;
+  font-weight: 300;
+  line-height: 17px;
+}
