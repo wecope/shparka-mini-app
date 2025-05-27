@@ -51,9 +51,33 @@ export const IndexPage: FC = () => {
                     <div className="meal-price-plus-3">+</div>
                 </div>
             </div>
-            <div className="meal-square-4"></div>
-            <div className="meal-square-5"></div>
-            <div className="meal-square-6"></div>
+            <div className="meal-card-bottom">
+                <div className="meal-square-4"></div>
+                <div className="meal-text-4">Овощной салат с лососем</div>
+                <div className="meal-weight-4">250 г</div>
+                <div className="meal-price-4">
+                    <div className="meal-price-text-4">9,60</div>
+                    <div className="meal-price-plus-4">+</div>
+                </div>
+            </div>
+            <div className="meal-card-bottom">
+                <div className="meal-square-5"></div>
+                <div className="meal-text-5">Жареная курица с рисом карри</div>
+                <div className="meal-weight-5">310 г</div>
+                <div className="meal-price-5">
+                    <div className="meal-price-text-5">11,40</div>
+                    <div className="meal-price-plus-5">+</div>
+                </div>
+            </div>
+            <div className="meal-card-bottom">
+                <div className="meal-square-6"></div>
+                <div className="meal-text-6">Стейк из свинины с овощами</div>
+                <div className="meal-weight-6">420 г</div>
+                <div className="meal-price-6">
+                    <div className="meal-price-text-6">15,20</div>
+                    <div className="meal-price-plus-6">+</div>
+                </div>
+            </div>
         </div>
     </Page>
   );

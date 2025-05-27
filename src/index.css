@@ -149,6 +149,33 @@ body {
   width: 100%;
 }
 
+.meal-square-4 {
+  background-image: url("https://i.ibb.co/YTNkhkYr/pngwing-com.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.meal-square-5 {
+  background-image: url("https://i.ibb.co/KcXjJmVn/pngwing-com-2.png");
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.meal-square-6 {
+  background-image: url("https://i.ibb.co/j9FS6mF0/pngwing-com-3.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
 .meal-weight-1 {
   color: #B7B7B7;
 }
@@ -158,6 +185,18 @@ body {
 }
 
 .meal-weight-3 {
+  color: #B7B7B7;
+}
+
+.meal-weight-4 {
+  color: #B7B7B7;
+}
+
+.meal-weight-5 {
+  color: #B7B7B7;
+}
+
+.meal-weight-6 {
   color: #B7B7B7;
 }
 
@@ -216,4 +255,69 @@ font-size: 20px;
 font-size: 20px;
   font-weight: 500;
   line-height: 19px;
+}
+
+.meal-price-4 {
+  background-color: #F2F2F2;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #FF8000;
+  margin-top: 4px;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.meal-price-plus-4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.meal-price-6 {
+  background-color: #F2F2F2;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #FF8000;
+  margin-top: 4px;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.meal-price-plus-6 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.meal-price-5 {
+  background-color: #F2F2F2;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #FF8000;
+  margin-top: 4px;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.meal-price-plus-5 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.meal-card-bottom {
+  color: #363636;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin-top: 100px;
 }
