@@ -179,3 +179,41 @@ font-size: 20px;
   font-weight: 500;
   line-height: 19px;
 }
+
+.meal-price-2 {
+  background-color: #F2F2F2;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #FF8000;
+  margin-top: 4px;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.meal-price-plus-2 {
+font-size: 20px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.meal-price-3 {
+  background-color: #F2F2F2;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #FF8000;
+  margin-top: 4px;
+  font-size: 16px;
+  gap: 8px;
+}
+
+.meal-price-plus-3 {
+font-size: 20px;
+  font-weight: 500;
+  line-height: 19px;
+}
