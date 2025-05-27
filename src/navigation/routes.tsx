@@ -5,6 +5,7 @@ import { InitDataPage } from '@/pages/InitDataPage.tsx';
 import { LaunchParamsPage } from '@/pages/LaunchParamsPage.tsx';
 import { ThemeParamsPage } from '@/pages/ThemeParamsPage.tsx';
 import { TONConnectPage } from '@/pages/TONConnectPage/TONConnectPage';
+import {ReadyFoodPage} from "@/pages/ReadyFoodPage/ReadyFoodPage.tsx";
 
 interface Route {
   path: string;
@@ -41,4 +42,9 @@ export const routes: Route[] = [
       </svg>
     ),
   },
+  {
+    path: '/ready-food',
+    Component: ReadyFoodPage,
+    title: 'Готовая еда',
+  }
 ];

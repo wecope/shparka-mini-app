@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { Page } from '@/components/Page.tsx';
+import { Link } from '@/components/Link/Link.tsx';
 
 export const IndexPage: FC = () => {
   return (
@@ -9,9 +10,11 @@ export const IndexPage: FC = () => {
             <input type="search" placeholder="Искать в Shparka" />
         </div>
         <div className="container">
-          <div className="square ready">
-            <div className="square-text">Готовая еда</div>
-          </div>
+            <Link to="ready-food">
+                  <div className="square ready">
+                          <div className="square-text">Готовая еда</div>
+                  </div>
+            </Link>
           <div className="square water">
             <div className="square-text">Вода и напитки</div>
           </div>
