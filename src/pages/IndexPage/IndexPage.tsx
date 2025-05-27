@@ -82,6 +82,7 @@ export const IndexPage: FC = () => {
                 </div>
             </div>
         </div>
+        <div className="bottom-space"></div>
     </Page>
   );
 };
