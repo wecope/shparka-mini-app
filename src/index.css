@@ -170,14 +170,14 @@ body {
   padding: 6px;
   color: #FF8000;
   margin-top: 4px;
-  font-size: 14px;
-  gap: 4px;
+  font-size: 16px;
+  gap: 8px;
 }
 
 .meal-price-plus-1 {
 font-size: 20px;
-  font-weight: 300;
-  line-height: 17px;
+  font-weight: 500;
+  line-height: 19px;
 }
 
 .meal-price-2 {
