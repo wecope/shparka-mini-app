@@ -167,7 +167,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
+  padding: 10px;
   color: #FF8000;
   margin-top: 4px;
   font-size: 16px;
@@ -178,42 +178,4 @@ body {
 font-size: 20px;
   font-weight: 500;
   line-height: 19px;
-}
-
-.meal-price-2 {
-  background-color: #F2F2F2;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  color: #FF8000;
-  margin-top: 4px;
-  font-size: 14px;
-  gap: 4px;
-}
-
-.meal-price-plus-2 {
-font-size: 20px;
-  font-weight: 300;
-  line-height: 17px;
-}
-
-.meal-price-3 {
-  background-color: #F2F2F2;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  color: #FF8000;
-  margin-top: 4px;
-  font-size: 14px;
-  gap: 4px;
-}
-
-.meal-price-plus-3 {
-font-size: 20px;
-  font-weight: 300;
-  line-height: 17px;
 }
