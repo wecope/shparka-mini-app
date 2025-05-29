@@ -62,6 +62,7 @@ export const MealCardWithModal = () => (
       Добавить в корзину
     </button>
       </div>
+      <div className="bottom-space"></div>
   </Modal>
 );
 
