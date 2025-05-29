@@ -2,7 +2,6 @@ import type { FC } from 'react';
 import { Page } from '@/components/Page.tsx';
 import { Link } from '@/components/Link/Link.tsx';
 import {useNavigate} from "react-router-dom";
-import { useState } from 'react';
 import { Modal, Placeholder } from '@telegram-apps/telegram-ui';
 
 const PlaceholderImage = () => (
@@ -13,16 +12,11 @@ const PlaceholderImage = () => (
   />
 );
 
-export const MealCardWithModal = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  return (
-    <>
-      <div
-        className="meal-card"
-        onClick={() => setModalOpen(true)}
-        style={{ cursor: 'pointer' }}
-      >
+export const MealCardWithModal = () => (
+  <Modal
+    header={<Modal.Header />}
+    trigger={
+      <div className="meal-card" style={{ cursor: 'pointer' }}>
         <div className="meal-square-1"></div>
         <div className="meal-text-1">Каша овсяная с бананом</div>
         <div className="meal-weight-1">370 г</div>
@@ -31,17 +25,16 @@ export const MealCardWithModal = () => {
           <div className="meal-price-plus-1">+</div>
         </div>
       </div>
-      <Modal open={isModalOpen} onClose={() => setModalOpen(false)} header={<Modal.Header />}>
-        <Placeholder
-          header="This is nice modal, isn't it?"
-          description="Swipe up to close"
-        >
-          <PlaceholderImage />
-        </Placeholder>
-      </Modal>
-    </>
-  );
-};
+    }
+  >
+    <Placeholder
+      header="This is nice modal, isn't it?"
+      description="Swipe up to close"
+    >
+      <PlaceholderImage />
+    </Placeholder>
+  </Modal>
+);
 
 
 
