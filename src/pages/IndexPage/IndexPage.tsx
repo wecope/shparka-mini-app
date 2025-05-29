@@ -5,6 +5,156 @@ import { Link } from '@/components/Link/Link.tsx';
 import {useNavigate} from "react-router-dom";
 import { Modal, Placeholder } from '@telegram-apps/telegram-ui';
 
+const OrderModal: FC<{ open: boolean; onOpenChange: (open: boolean) => void }> = ({ open, onOpenChange }) => {
+  const [city, setCity] = useState('');
+  const [street, setStreet] = useState('');
+  const [house, setHouse] = useState('');
+  const [floor, setFloor] = useState('');
+  const [address, setAddress] = useState('');
+  const [payment, setPayment] = useState('card');
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '14px 16px',
+    border: '1px solid #E0E0E0',
+    borderRadius: 12,
+    fontSize: 16,
+    fontFamily: 'Inter, sans-serif',
+    marginBottom: 8,
+    background: '#F9F9F9',
+    color: '#363636',
+    outline: 'none',
+    boxSizing: 'border-box',
+    fontWeight: 500,
+  };
+
+  const labelStyle: React.CSSProperties = {
+    fontSize: 15,
+    fontWeight: 600,
+    marginBottom: 4,
+    color: '#363636',
+    fontFamily: 'Inter, sans-serif',
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onOpenChange(false);
+  };
+
+  return (
+    <Modal
+      open={open}
+      onOpenChange={onOpenChange}
+      header={<Modal.Header>Оформление заказа</Modal.Header>}
+      style={{
+        background: '#fff',
+        borderRadius: 20,
+        padding: 0,
+        maxWidth: 420,
+        margin: '0 auto',
+      }}
+    >
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          padding: 24,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 12,
+          background: '#fff',
+        }}
+      >
+        <label style={labelStyle}>Город</label>
+        <input style={inputStyle} placeholder="Город" value={city} onChange={e => setCity(e.target.value)} required />
+
+        <label style={labelStyle}>Улица</label>
+        <input style={inputStyle} placeholder="Улица" value={street} onChange={e => setStreet(e.target.value)} required />
+
+        <label style={labelStyle}>Номер дома</label>
+        <input style={inputStyle} placeholder="Номер дома" value={house} onChange={e => setHouse(e.target.value)} required />
+
+        <label style={labelStyle}>Этаж</label>
+        <input style={inputStyle} placeholder="Этаж" value={floor} onChange={e => setFloor(e.target.value)} />
+
+        <label style={labelStyle}>Квартира</label>
+<input
+  style={inputStyle}
+  placeholder="Квартира"
+  value={address}
+  onChange={e => setAddress(e.target.value)}
+/>
+{payment === 'card' && (
+  <div
+    style={{
+      background: '#F5F6FA',
+      borderRadius: 14,
+      padding: 16,
+      marginTop: 8,
+      marginBottom: 8,
+      boxShadow: '0 1px 4px rgba(0,0,0,0.03)',
+      border: '1px solid #ECECEC',
+    }}
+  >
+    <label style={labelStyle}>Номер карты</label>
+    <input
+      style={inputStyle}
+      placeholder="0000 0000 0000 0000"
+      maxLength={19}
+      inputMode="numeric"
+      pattern="\d{4} \d{4} \d{4} \d{4}"
+      required
+    />
+    <div style={{ display: 'flex', gap: 12 }}>
+      <div style={{ flex: 1 }}>
+        <label style={labelStyle}>Срок действия</label>
+        <input
+          style={inputStyle}
+          placeholder="MM/YY"
+          maxLength={5}
+          inputMode="numeric"
+          pattern="\d{2}/\d{2}"
+          required
+        />
+      </div>
+      <div style={{ flex: 1 }}>
+        <label style={labelStyle}>CVC</label>
+        <input
+          style={inputStyle}
+          placeholder="CVC"
+          maxLength={3}
+          inputMode="numeric"
+          pattern="\d{3}"
+          required
+        />
+      </div>
+    </div>
+  </div>
+)}
+
+        <button
+          type="submit"
+          style={{
+            width: '100%',
+            background: 'linear-gradient(90deg, #FF8000 0%, #FF4D00 100%)',
+            color: '#fff',
+            border: 'none',
+            borderRadius: 12,
+            fontSize: 18,
+            fontWeight: 700,
+            padding: '16px 0',
+            cursor: 'pointer',
+            fontFamily: 'Inter, sans-serif',
+            marginTop: 16,
+            boxShadow: '0 2px 8px rgba(255,128,0,0.08)',
+          }}
+        >
+          Оформить
+        </button>
+      </form>
+    </Modal>
+  );
+};
+
 const FloatingCartButton: FC = () => (
   <div
     style={{
@@ -37,7 +187,7 @@ export const MealCardWithModal: FC<{
   onAddToCart: () => void;
   inCart: boolean;
   onRemoveFromCart: () => void;
-}> = ({ open, onOpenChange, onAddToCart, inCart, onRemoveFromCart }) => (
+}> = ({ open, onOpenChange, onAddToCart, inCart }) => (
   <Modal
     open={open}
     onOpenChange={onOpenChange}
@@ -143,6 +293,7 @@ export const IndexPage: FC = () => {
     const [modalOpen, setModalOpen] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [inCart, setInCart] = useState(false);
+  const [orderModalOpen, setOrderModalOpen] = useState(false);
   return (
     <Page back={false}>
         <div className="search-bar">
@@ -231,7 +382,12 @@ export const IndexPage: FC = () => {
             </div>
         </div>
         <div className="bottom-space"></div>
-        {showCart && <FloatingCartButton />}
+        {showCart && (
+  <div onClick={() => setOrderModalOpen(true)} style={{ cursor: 'pointer' }}>
+    <FloatingCartButton />
+  </div>
+)}
+<OrderModal open={orderModalOpen} onOpenChange={setOrderModalOpen} />
     </Page>
   );
 };
