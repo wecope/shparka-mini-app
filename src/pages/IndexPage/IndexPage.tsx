@@ -1,12 +1,45 @@
 import type { FC } from 'react';
+import { useState } from 'react';
 import { Page } from '@/components/Page.tsx';
 import { Link } from '@/components/Link/Link.tsx';
 import {useNavigate} from "react-router-dom";
 import { Modal, Placeholder } from '@telegram-apps/telegram-ui';
 
-export const MealCardWithModal = () => (
+const FloatingCartButton: FC = () => (
+  <div
+    style={{
+      position: 'fixed',
+      right: 16,
+      bottom: 36,
+      zIndex: 1000,
+      background: 'linear-gradient(90deg, #FF8000 0%, #FF4D00 100%)',
+      color: '#fff',
+      borderRadius: 32,
+      padding: '14px 28px',
+      fontSize: 18,
+      fontWeight: 700,
+      boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      fontFamily: 'Inter',
+    }}
+  >
+    <span>15 мин</span>
+    <span style={{ fontWeight: 400, fontSize: 18 }}>|</span>
+    <span>5,90</span>
+  </div>
+);
+
+export const MealCardWithModal: FC<{
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  onAddToCart: () => void;
+}> = ({ open, onOpenChange, onAddToCart }) => (
   <Modal
-      header={<Modal.Header>Информация о блюде</Modal.Header>}
+    open={open}
+    onOpenChange={onOpenChange}
+    header={<Modal.Header>Информация о блюде</Modal.Header>}
     trigger={
       <div className="meal-card" style={{ cursor: 'pointer' }}>
         <div className="meal-square-1"></div>
@@ -18,58 +51,81 @@ export const MealCardWithModal = () => (
         </div>
       </div>
     }
-    style={{ backgroundColor: 'white', height: '90vh', color: 'black', fontFamily: 'Inter', textAlign: 'center' }}
+    style={{
+      backgroundColor: 'white',
+      height: '90vh',
+      color: 'black',
+      fontFamily: 'Inter',
+      textAlign: 'center'
+    }}
   >
-    <Placeholder
-      style={{ paddingTop: 0,  fontFamily: 'Inter'}}
-    >
+    <Placeholder style={{ paddingTop: 0, fontFamily: 'Inter' }}>
       <img
         alt="Овсяная каша с бананом"
         src="https://i.ibb.co/sJNPrLvL/5ee7227ad2a94-800x800-fit-png.webp"
-        style={{ width: 180, height: 180, borderRadius: 16, objectFit: 'cover', textAlign: "left"}}
+        style={{
+          width: 180,
+          height: 180,
+          borderRadius: 16,
+          objectFit: 'cover',
+          textAlign: "left"
+        }}
       />
     </Placeholder>
-      <div style={{ textAlign: 'left', padding: '0px 24px', fontFamily: 'Inter' }}>
-          <div style={{ textAlign: 'center', fontSize: 24, marginTop: 0, fontWeight: '500', marginBottom: 15}}>Каша овсяная с бананом</div>
-        <div style={{ wordBreak: 'break-word', whiteSpace: 'normal'}}>Нежная овсяная каша, приготовленная на молоке, с ломтиками спелого банана — идеальный завтрак для бодрого начала дня.</div>
-        <div style={{ marginTop: 16, fontSize: 16, color: '#555' }}>
-            Вес: <strong>370</strong> г
-        </div>
-        <div style={{ marginTop: 8, fontSize: 16, color: '#555' }}>
-            Состав: <strong>Овсяные хлопья, банан, молоко, сахар</strong>
-        </div>
-        <div style={{ marginTop: 8, fontSize: 16, color: '#555' }}>
-            Калорийность: <strong>150</strong> ккал
-        </div>
-        <div style={{ marginTop: 16, fontSize: 16, color: '#555' }}>
-            Цена: <strong>5,90</strong> руб.
-        </div>
-          <button
-      style={{
-        width: '100%',
-        background: 'linear-gradient(90deg, #FF8000 0%, #FF4D00 100%)',
-        color: '#fff',
-        border: 'none',
-        borderRadius: 12,
-        fontSize: 18,
-        fontWeight: 700,
-        padding: '16px 0',
-        cursor: 'pointer',
-        fontFamily: 'Inter',
-          marginTop: 24,
-      }}
-    >
-      Добавить в корзину
-    </button>
+    <div style={{ textAlign: 'left', padding: '0px 24px', fontFamily: 'Inter' }}>
+      <div style={{
+        textAlign: 'center',
+        fontSize: 24,
+        marginTop: 0,
+        fontWeight: '500',
+        marginBottom: 15
+      }}>Каша овсяная с бананом</div>
+      <div style={{ wordBreak: 'break-word', whiteSpace: 'normal' }}>
+        Нежная овсяная каша, приготовленная на молоке, с ломтиками спелого банана — идеальный завтрак для бодрого начала дня.
       </div>
-      <div className="bottom-space"></div>
+      <div style={{ marginTop: 16, fontSize: 16, color: '#555' }}>
+        Вес: <strong>370</strong> г
+      </div>
+      <div style={{ marginTop: 8, fontSize: 16, color: '#555' }}>
+        Состав: <strong>Овсяные хлопья, банан, молоко, сахар</strong>
+      </div>
+      <div style={{ marginTop: 8, fontSize: 16, color: '#555' }}>
+        Калорийность: <strong>150</strong> ккал
+      </div>
+      <div style={{ marginTop: 16, fontSize: 16, color: '#555' }}>
+        Цена: <strong>5,90</strong> руб.
+      </div>
+      <button
+        style={{
+          width: '100%',
+          background: 'linear-gradient(90deg, #FF8000 0%, #FF4D00 100%)',
+          color: '#fff',
+          border: 'none',
+          borderRadius: 12,
+          fontSize: 18,
+          fontWeight: 700,
+          padding: '16px 0',
+          cursor: 'pointer',
+          fontFamily: 'Inter',
+          marginTop: 24,
+        }}
+        onClick={() => {
+          onOpenChange(false);
+          onAddToCart();
+        }}
+      >
+        Добавить в корзину
+      </button>
+    </div>
+    <div className="bottom-space"></div>
   </Modal>
 );
 
 
-
 export const IndexPage: FC = () => {
     const navigate = useNavigate();
+    const [modalOpen, setModalOpen] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   return (
     <Page back={false}>
         <div className="search-bar">
@@ -104,7 +160,11 @@ export const IndexPage: FC = () => {
         </div>
         <div className="new-heading">Новинки</div>
         <div className="meal-container">
-            <MealCardWithModal />
+            <MealCardWithModal
+          open={modalOpen}
+          onOpenChange={setModalOpen}
+          onAddToCart={() => setShowCart(true)}
+        />
             <div className="meal-card">
                 <div className="meal-square-2"></div>
                 <div className="meal-text-2">Цезарь с креветками</div>
@@ -152,6 +212,7 @@ export const IndexPage: FC = () => {
             </div>
         </div>
         <div className="bottom-space"></div>
+        {showCart && <FloatingCartButton />}
     </Page>
   );
 };
