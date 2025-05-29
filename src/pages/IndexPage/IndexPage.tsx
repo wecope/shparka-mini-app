@@ -35,7 +35,9 @@ export const MealCardWithModal: FC<{
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onAddToCart: () => void;
-}> = ({ open, onOpenChange, onAddToCart }) => (
+  inCart: boolean;
+  onRemoveFromCart: () => void;
+}> = ({ open, onOpenChange, onAddToCart, inCart, onRemoveFromCart }) => (
   <Modal
     open={open}
     onOpenChange={onOpenChange}
@@ -45,9 +47,23 @@ export const MealCardWithModal: FC<{
         <div className="meal-square-1"></div>
         <div className="meal-text-1">Каша овсяная с бананом</div>
         <div className="meal-weight-1">370 г</div>
-        <div className="meal-price-1">
-          <div className="meal-price-text-1">5,90</div>
-          <div className="meal-price-plus-1">+</div>
+        <div className="meal-price-1" style={{
+      backgroundColor: inCart ? '#FF8000' : '#F2F2F2',
+      color: inCart ? '#fff' : '#FF8000',
+      transition: 'background 0.2s, color 0.2s',
+    }}>
+          {inCart ? (
+      <>
+        <span style={{ fontSize: 20, fontWeight: 700, margin: '0 8px' }}>-</span>
+        <span style={{ fontSize: 16, fontWeight: 700 }}>1</span>
+        <span style={{ fontSize: 20, fontWeight: 700, margin: '0 8px' }}>+</span>
+      </>
+    ) : (
+      <>
+        <div className="meal-price-text-1">5,90</div>
+        <div className="meal-price-plus-1">+</div>
+      </>
+    )}
         </div>
       </div>
     }
@@ -126,6 +142,7 @@ export const IndexPage: FC = () => {
     const navigate = useNavigate();
     const [modalOpen, setModalOpen] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const [inCart, setInCart] = useState(false);
   return (
     <Page back={false}>
         <div className="search-bar">
@@ -163,7 +180,9 @@ export const IndexPage: FC = () => {
             <MealCardWithModal
           open={modalOpen}
           onOpenChange={setModalOpen}
-          onAddToCart={() => setShowCart(true)}
+          onAddToCart={() => {setShowCart(true); setInCart(true); }}
+          inCart={inCart}
+          onRemoveFromCart={() => setInCart(false)}
         />
             <div className="meal-card">
                 <div className="meal-square-2"></div>
