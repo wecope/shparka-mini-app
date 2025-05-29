@@ -2,6 +2,46 @@ import type { FC } from 'react';
 import { Page } from '@/components/Page.tsx';
 import { Link } from '@/components/Link/Link.tsx';
 import {useNavigate} from "react-router-dom";
+import { useState } from 'react';
+import { Modal, Placeholder } from '@telegram-apps/telegram-ui';
+
+const PlaceholderImage = () => (
+  <img
+    alt="Telegram sticker"
+    src="https://xelene.me/telegram.gif"
+    style={{ width: 120, height: 120 }}
+  />
+);
+
+export const MealCardWithModal = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  return (
+    <>
+      <div
+        className="meal-card"
+        onClick={() => setModalOpen(true)}
+        style={{ cursor: 'pointer' }}
+      >
+        <div className="meal-square-1"></div>
+        <div className="meal-text-1">Каша овсяная с бананом</div>
+        <div className="meal-weight-1">370 г</div>
+        <div className="meal-price-1">
+          <div className="meal-price-text-1">5,90</div>
+          <div className="meal-price-plus-1">+</div>
+        </div>
+      </div>
+      <Modal open={isModalOpen} onClose={() => setModalOpen(false)} header={<Modal.Header />}>
+        <Placeholder
+          header="This is nice modal, isn't it?"
+          description="Swipe up to close"
+        >
+          <PlaceholderImage />
+        </Placeholder>
+      </Modal>
+    </>
+  );
+};
 
 
 
@@ -41,15 +81,7 @@ export const IndexPage: FC = () => {
         </div>
         <div className="new-heading">Новинки</div>
         <div className="meal-container">
-            <div className="meal-card">
-                <div className="meal-square-1"></div>
-                <div className="meal-text-1">Каша овсяная с бананом</div>
-                <div className="meal-weight-1">370 г</div>
-                <div className="meal-price-1">
-                    <div className="meal-price-text-1">5,90</div>
-                    <div className="meal-price-plus-1">+</div>
-                </div>
-            </div>
+            <MealCardWithModal />
             <div className="meal-card">
                 <div className="meal-square-2"></div>
                 <div className="meal-text-2">Цезарь с креветками</div>
