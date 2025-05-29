@@ -18,7 +18,7 @@ export const MealCardWithModal = () => (
         </div>
       </div>
     }
-    style={{ backgroundColor: 'white', height: '80vh', color: 'black', fontFamily: 'Inter', textAlign: 'center' }}
+    style={{ backgroundColor: 'white', height: '90vh', color: 'black', fontFamily: 'Inter', textAlign: 'center' }}
   >
     <Placeholder
       style={{ paddingTop: 0,  fontFamily: 'Inter'}}
