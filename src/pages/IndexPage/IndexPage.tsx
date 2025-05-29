@@ -4,17 +4,9 @@ import { Link } from '@/components/Link/Link.tsx';
 import {useNavigate} from "react-router-dom";
 import { Modal, Placeholder } from '@telegram-apps/telegram-ui';
 
-const PlaceholderImage = () => (
-  <img
-    alt="Telegram sticker"
-    src="https://xelene.me/telegram.gif"
-    style={{ width: 120, height: 120 }}
-  />
-);
-
 export const MealCardWithModal = () => (
   <Modal
-    header={<Modal.Header />}
+      header={<Modal.Header>Информация о блюде</Modal.Header>}
     trigger={
       <div className="meal-card" style={{ cursor: 'pointer' }}>
         <div className="meal-square-1"></div>
@@ -26,13 +18,51 @@ export const MealCardWithModal = () => (
         </div>
       </div>
     }
+    style={{ backgroundColor: 'white', height: '70vh', color: 'black', fontFamily: 'Inter', textAlign: 'center' }}
   >
+      <h1 style={{ fontSize: 24, marginTop: 0 }}>Информация о блюде</h1>
     <Placeholder
-      header="This is nice modal, isn't it?"
-      description="Swipe up to close"
+      style={{ paddingTop: 0,  fontFamily: 'Inter'}}
     >
-      <PlaceholderImage />
+      <img
+        alt="Овсяная каша с бананом"
+        src="https://i.ibb.co/sJNPrLvL/5ee7227ad2a94-800x800-fit-png.webp"
+        style={{ width: 180, height: 180, borderRadius: 16, objectFit: 'cover', textAlign: "left"}}
+      />
     </Placeholder>
+      <div style={{ textAlign: 'left', padding: '0px 24px', fontFamily: 'Inter' }}>
+          <div style={{ textAlign: 'center', fontSize: 24, marginTop: 0, fontWeight: '500', marginBottom: 15}}>Каша овсяная с бананом</div>
+        <div style={{ wordBreak: 'break-word', whiteSpace: 'normal'}}>Нежная овсяная каша, приготовленная на молоке, с ломтиками спелого банана — идеальный завтрак для бодрого начала дня.</div>
+        <div style={{ marginTop: 16, fontSize: 16, color: '#555' }}>
+            Вес: <strong>370</strong> г
+        </div>
+        <div style={{ marginTop: 8, fontSize: 16, color: '#555' }}>
+            Состав: <strong>Овсяные хлопья, банан, молоко, сахар</strong>
+        </div>
+        <div style={{ marginTop: 8, fontSize: 16, color: '#555' }}>
+            Калорийность: <strong>150</strong> ккал
+        </div>
+        <div style={{ marginTop: 16, fontSize: 16, color: '#555' }}>
+            Цена: <strong>5,90</strong> руб.
+        </div>
+          <button
+      style={{
+        width: '100%',
+        background: 'linear-gradient(90deg, #FF8000 0%, #FF4D00 100%)',
+        color: '#fff',
+        border: 'none',
+        borderRadius: 12,
+        fontSize: 18,
+        fontWeight: 700,
+        padding: '16px 0',
+        cursor: 'pointer',
+        fontFamily: 'Inter',
+          marginTop: 24,
+      }}
+    >
+      Добавить в корзину
+    </button>
+      </div>
   </Modal>
 );
 
