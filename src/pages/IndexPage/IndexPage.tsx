@@ -20,7 +20,6 @@ export const MealCardWithModal = () => (
     }
     style={{ backgroundColor: 'white', height: '70vh', color: 'black', fontFamily: 'Inter', textAlign: 'center' }}
   >
-      <h1 style={{ fontSize: 24, marginTop: 0 }}>Информация о блюде</h1>
     <Placeholder
       style={{ paddingTop: 0,  fontFamily: 'Inter'}}
     >
