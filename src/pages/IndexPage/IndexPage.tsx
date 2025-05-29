@@ -40,7 +40,7 @@ const handleSubmit = (e: React.FormEvent) => {
   e.preventDefault();
   popup.show({
     title: 'Заказ оформлен!',
-    message: 'Ваш заказ оформлен! Ожидайте доставку в течение 15 минут. В случае возникновения вопросов, пожалуйста, свяжитесь с нашей службой поддержки.',
+    message: 'Ваш заказ оформлен! Ожидайте доставку в течение 15 минут. Курьер свяжется с вами в Телеграм по прибытии.',
     buttons: [{ type: 'default', text: 'Ок' }]
   });
   onOpenChange(false);
@@ -382,7 +382,7 @@ export const IndexPage: FC = () => {
             </div>
         </div>
         <div className="bottom-space"></div>
-        {showCart && (
+        {showCart && !orderModalOpen && (
   <div onClick={() => setOrderModalOpen(true)} style={{ cursor: 'pointer' }}>
     <FloatingCartButton />
   </div>
