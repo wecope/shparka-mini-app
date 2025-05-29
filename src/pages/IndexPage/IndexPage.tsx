@@ -11,7 +11,6 @@ const OrderModal: FC<{ open: boolean; onOpenChange: (open: boolean) => void }> =
   const [house, setHouse] = useState('');
   const [floor, setFloor] = useState('');
   const [address, setAddress] = useState('');
-  const [payment, setPayment] = useState('card');
 
   const inputStyle: React.CSSProperties = {
     width: '100%',
@@ -83,7 +82,6 @@ const OrderModal: FC<{ open: boolean; onOpenChange: (open: boolean) => void }> =
   value={address}
   onChange={e => setAddress(e.target.value)}
 />
-{payment === 'card' && (
   <div
     style={{
       background: '#F5F6FA',
@@ -129,7 +127,6 @@ const OrderModal: FC<{ open: boolean; onOpenChange: (open: boolean) => void }> =
       </div>
     </div>
   </div>
-)}
 
         <button
           type="submit"
