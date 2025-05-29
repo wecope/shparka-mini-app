@@ -4,6 +4,7 @@ import { Page } from '@/components/Page.tsx';
 import { Link } from '@/components/Link/Link.tsx';
 import {useNavigate} from "react-router-dom";
 import { Modal, Placeholder } from '@telegram-apps/telegram-ui';
+import { popup } from '@telegram-apps/sdk';
 
 const OrderModal: FC<{ open: boolean; onOpenChange: (open: boolean) => void }> = ({ open, onOpenChange }) => {
   const [city, setCity] = useState('');
@@ -35,10 +36,15 @@ const OrderModal: FC<{ open: boolean; onOpenChange: (open: boolean) => void }> =
     fontFamily: 'Inter, sans-serif',
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onOpenChange(false);
-  };
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  popup.show({
+    title: 'Заказ оформлен!',
+    message: 'Ваш заказ оформлен! Ожидайте доставку в течение 15 минут. В случае возникновения вопросов, пожалуйста, свяжитесь с нашей службой поддержки.',
+    buttons: [{ type: 'default', text: 'Ок' }]
+  });
+  onOpenChange(false);
+};
 
   return (
     <Modal
@@ -64,13 +70,13 @@ const OrderModal: FC<{ open: boolean; onOpenChange: (open: boolean) => void }> =
         }}
       >
         <label style={labelStyle}>Город</label>
-        <input style={inputStyle} placeholder="Город" value={city} onChange={e => setCity(e.target.value)} required />
+        <input style={inputStyle} placeholder="Город" value={city} onChange={e => setCity(e.target.value)} />
 
         <label style={labelStyle}>Улица</label>
-        <input style={inputStyle} placeholder="Улица" value={street} onChange={e => setStreet(e.target.value)} required />
+        <input style={inputStyle} placeholder="Улица" value={street} onChange={e => setStreet(e.target.value)} />
 
         <label style={labelStyle}>Номер дома</label>
-        <input style={inputStyle} placeholder="Номер дома" value={house} onChange={e => setHouse(e.target.value)} required />
+        <input style={inputStyle} placeholder="Номер дома" value={house} onChange={e => setHouse(e.target.value)} />
 
         <label style={labelStyle}>Этаж</label>
         <input style={inputStyle} placeholder="Этаж" value={floor} onChange={e => setFloor(e.target.value)} />
@@ -100,7 +106,6 @@ const OrderModal: FC<{ open: boolean; onOpenChange: (open: boolean) => void }> =
       maxLength={19}
       inputMode="numeric"
       pattern="\d{4} \d{4} \d{4} \d{4}"
-      required
     />
     <div style={{ display: 'flex', gap: 12 }}>
       <div style={{ flex: 1 }}>
@@ -111,7 +116,6 @@ const OrderModal: FC<{ open: boolean; onOpenChange: (open: boolean) => void }> =
           maxLength={5}
           inputMode="numeric"
           pattern="\d{2}/\d{2}"
-          required
         />
       </div>
       <div style={{ flex: 1 }}>
@@ -122,7 +126,6 @@ const OrderModal: FC<{ open: boolean; onOpenChange: (open: boolean) => void }> =
           maxLength={3}
           inputMode="numeric"
           pattern="\d{3}"
-          required
         />
       </div>
     </div>
